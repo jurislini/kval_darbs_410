@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <meta charset="utf-8">
+    <title>Nosaukums</title>
+    <link rel="shortcit icon" href="./">
+    <link rel="stylesheet" href="./subfolers/main.css">
+    <style>
+        body{
+            background-image:url(./subfolers/bground.png);
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="form" id="login">
+            <h1 class="fomr__title">login</h1>
+            <div class="form__message form__message--error">Nepareizs lietotājvārds.</div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Lietotājvārds vai epasts">
+                <div class="form__input-error-message">Kļūda</div>
+            </div>
+            <div class="form__input-group">
+                <input type="parole" class="form__input" autofocus placeholder="Parole">
+                <div class="form__input-error-message">Kļūda</div>
+            </div>
+            <button class="form__button" type="submit">Turpināt</button>
+            <p class="form__text">
+                <a href="#" class="form__link">Aizmirsi paroli?</a>
+            </p>
+            <p class="form__text">
+                <a  class="form__link" href="./" id="linkCreateAccount">Nav konts?</a>
+            </p>
+        
+        </form>
+
+    </div>
+    <script src="./subfolers/main.js"></script>
+</body>
+</html>

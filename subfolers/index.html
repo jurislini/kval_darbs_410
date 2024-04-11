@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+    <meta charset="utf-8" />
+    <title>Nosaukums</title>
+    <link rel="shortcit icon" href="./" />
+    <link rel="stylesheet" href="./main.css" />
+    <style>
+      body {
+        background: url("bground.png");
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form">
+        <h1 class="fomr__title">login</h1>
+        <div class="form__message form__message--error">
+          Nepareizs lietotājvārds.
+        </div>
+        <div class="form__input-group">
+          <input
+            type="text"
+            class="form__input"
+            autofocus
+            placeholder="Lietotājvārds vai epasts"
+            id="login"
+          />
+          <!-- <div class="form__input-error-message">Kļūda</div> -->
+        </div>
+        <div class="form__input-group">
+          <input
+            type="password"
+            class="form__input"
+            placeholder="Parole"
+            id="parole"
+          />
+          <!-- <div class="form__input-error-message">Kļūda</div> -->
+        </div>
+        <button class="form__button" type="submit" onclick="auth(event)">
+          Turpināt
+        </button>
+        <p class="form__text">
+          <a href="#" class="form__link"
+            >Aizmirsi paroli?</a
+          >
+        </p>
+        <p class="form__text">
+          <a class="form__link" href="./registra_logs/index.html" id="linkCreateAccount">Nav konts?</a>
+        </p>
+      </form>
+    </div>
+    <script>
+      function auth(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("login").value;
+        const password = document.getElementById("parole").value;
+        const errorElement = document.querySelector(".form__message");
+
+        if (email === "test" && password === "test123") {
+          // Successful login
+          window.location.assign("./mainpage.html");
+          alert("Login successful");
+        } else {
+          // Display error message based on the specific error
+          if (email !== "test") {
+            errorElement.textContent = "Nepareizs lietotājvārds."; // Incorrect username
+          } else {
+            errorElement.textContent = "Nepareiza parole."; // Incorrect password
+          }
+          errorElement.style.display = "block"; // Show error message
+        }
+      }
+      // function auth(event) {
+      //   event.preventDefault();
+
+      //   const email = document.getElementById("login").value;
+      //   const password = document.getElementById("parole").value;
+      //   console.log(email, password);
+      //   if (email === "test" && password === "test123") {
+      //     window.location.assign("./mainpage.html");
+      //     alert("Login succsesful");
+      //   } else {
+      //     alert("Invalid information");
+      //   }
+      // }
+    </script>
+  </body>
+</html>
